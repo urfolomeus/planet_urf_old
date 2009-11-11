@@ -6,3 +6,4 @@ config/flickr.yml
 config/twitter.yml
 config/environment.rb
 config/environments/*
+db/*.sqlite3
