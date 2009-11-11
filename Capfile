@@ -6,7 +6,9 @@ namespace :deploy do
 	task :start, :roles => :app do
    	run "ln -s #{deploy_to}/shared/to_copy/database.yml #{current_path}/config/database.yml"
    	run "ln -s #{deploy_to}/shared/to_copy/environment.rb #{current_path}/config/environment.rb"
-   	run "touch #{deploy_to}/current/tmp/restart.txt"
+   	run "ln -s #{deploy_to}/shared/to_copy/flickr.yml #{current_path}/config/flickr.yml"
+    run "ln -s #{deploy_to}/shared/to_copy/twitter.yml #{current_path}/config/twitter.yml"
+    run "touch #{deploy_to}/current/tmp/restart.txt"
  	end
 
  	task :restart, :roles => :app do
