@@ -3,4 +3,4 @@ h1. Planet Urf
 This is the code for my personal blog. I've put this up on Github mainly to improve 
 my deployment process but there may be parts that you'd like to see the workings of.
 
-The site itself can be viewed at http://www.planeturf.net:http://www.planeturf.net
+The site itself can be viewed at "http://www.planeturf.net":http://www.planeturf.net
