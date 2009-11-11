@@ -1,0 +1,21 @@
+<% SALT = "7e3041ebc2fc05a40c60028e2c4901a81035d3cd" unless defined?(SALT) %>
+
+alan:
+  id: 1
+  login: alan
+  first_name: Alan
+  last_name: Gardner
+  email: alan@example.com
+  is_admin: true
+  salt: <%= SALT %>
+  crypted_password: <%= User.encrypt('pass', SALT) %>
+
+guest:
+  id: 2
+  login: guest
+  first_name: Guesty
+  last_name: Guesterson
+  email: guest@example.com
+  is_admin: false
+  salt: 7e3041ebc2fc05a40c60028e2c4901a81035d3cd
+  crypted_password: 00742970dc9e6319f8019fd54864d3ea740f04b1 # test

@@ -1,0 +1,33 @@
+<p>
+  <b>Title:</b>
+  <%=h @document.title %>
+</p>
+
+<p>
+	<b>Project:</b>
+  <%=h @document.project_id %>
+</p>
+
+<p>
+  <b>Category:</b>
+  <%=h @document.category %>
+</p>
+
+<p>
+  <b>Status:</b>
+  <%=h @document.status %>
+</p>
+
+<p>
+  <b>Revision:</b>
+  <%=h @document.revision %>
+</p>
+
+<p>
+  <b>Filename:</b>
+  <%=h @document.filename %>
+</p>
+
+
+<%= link_to 'Edit', edit_document_path(@document) %> |
+<%= link_to 'Back', documents_path %>

@@ -1,0 +1,39 @@
+<div class="mini_blog">
+	<div class="header">
+		<h3>
+			<%= image_tag "planet_urf_sm.png" %>
+			<%= friendly_date(blog.created_at) + " - " + blog.title %>
+			<% if blog.archived? %>
+			<span style="color: red;">&nbsp;(Archived)</span>
+			<% end %>
+			<%if is_admin?%>
+			(<%= link_to "Edit", edit_blog_path(blog) %> | 
+			<%= link_to 'Destroy', blog, :confirm => 'Are you sure?', :method => :delete %>)
+			<% end %>
+		</h3>
+	</div>
+	<div class="blurb">
+	<% if controller_name == "blogs" && controller.action_name == "index" %>
+		<%= blog.blurb.truncate_html(80, "... [<a href='blogs/#{blog.id}'>more</a>]") %>
+	<% else %>
+		<%= blog.blurb %>	
+	<% end %>
+	</div>
+	<div class="options">
+		<ul>
+			<li>@ <%=h friendly_date_time(blog.created_at) %></li>
+			<li class="digg">
+				<%= link_to "digg", 
+				"http://digg.com/submit?url=http://www.planeturf.net/blogs/#{blog.id}&amp;title=#{blog.title}" %>
+			</li>
+			<li class="facebook">
+				<%= link_to "facebook", "http://www.facebook.com/sharer.php?u=http://www.planeturf.net/blogs/#{blog.id}" %>
+			</li> 
+			<% if controller.action_name != "show" || controller_name != "blogs" %>
+			<li class="comments">
+				<%= link_to "comments (#{blog.comments.size})", blog_path(blog) + "#comment" %>
+			</li>
+			<% end %>
+		</ul>
+	</div>
+</div>

@@ -1,0 +1,9 @@
+1) Install Flickr-fu gem: sudo gem install flickr-fu
+2) Require in config/environment.rb: require 'flickr_fu'
+3) Require in app/application_helper.rb: require 'flickr_widget/flickr_helper'
+4) Include FlickrHelper in ApplicationHelper and TestHelper: include FlickrHelper
+5) Make a flickr.yml file
+6) Find and include your Flickr ID
+7) Copy flickr_widget folder into lib
+8) Copy flickr_test.rb into test/unit
+9) Create app/views/flickr/_sidebar_widget.html.erb

@@ -1,0 +1,28 @@
+planet_urf:
+  id: 1
+  title: Planet Urf
+  blurb:
+    <p>This blog is, in its own right, one of my projects. It has grown fairly organically as I've learned more about Ruby, Rails and coding in general.</p>
+  url: http://www.planeturf.net
+  created_at: 2008-06-06
+
+honours:
+  id: 2
+  title: Honours Project
+  blurb: 
+    <p>The purpose of my Honours project is to design, develop and test a scheduling tool that uses an evolutionary 
+    algorithm in order to try and predict the best possible schedule from a given set of activities, constraints, 
+    relationships and resources.</p>
+    <p>I will be taking offshore oil and gas platform shutdowns as the testing environment as they provide a 
+    microcosm of the typical full construction project within the Oil and Gas sector. A full platform shutdown 
+    involves shutting down all production on an offshore installation for a period of time in order to carry out 
+    essential maintenance which cannot be achieved whilst the plant is live. From a scheduling point of view it 
+    generally means trying to fit a set amount of work into a set amount of time with a limited number of 
+    resources. This makes it an ideal scenario for testing the performance of the evolutionary algorithm.</p>
+    <p>The <a title="evolutionary algorithm" href="http://en.wikipedia.org/wiki/Evolutionary_algorithm">
+    evolutionary algorithm</a> I have decided to concentrate on is the subset known as 
+    <a title="genetic algorithms" href="http://en.wikipedia.org/wiki/Genetic_algorithm">genetic algorithms</a>. 
+    A Genetic Algorithm uses Darwinian natural selection as a model for weeding out the best solutions from a given 
+    set of solutions.</p>
+  url: tramsched.planeturf.net
+  created_at: 2008-08-04

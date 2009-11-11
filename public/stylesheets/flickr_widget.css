@@ -1,0 +1,58 @@
+.flickr {
+	margin: 1em 0;
+	clear: left;
+}
+
+.flickr .header
+{
+	background: #fff;
+	height: 2.5em;
+	margin: 1em 0 0 0;
+}
+
+.flickr a 
+{
+	padding: 0;
+	background: none;
+}
+
+.flickr .header img
+{
+	height: 1.6em;
+	padding: 0.5em;
+}
+
+.flickr ul
+{
+	list-style-type: none;
+	margin: 0;
+	padding: 0;
+}
+
+.flickr ul li 
+{
+	border-bottom: 0;
+	margin: 0;
+	padding: 0.5em 1em;
+	clear: left;
+}
+
+.flickr .shadow
+{
+	float:left;
+	margin: 0.6em 0 1em 0.8em !important;
+	margin: 0.3em 0 0.5em 0.4em;
+	background: url("../images/shadow.png") no-repeat bottom right !important; /*IE Hack*/
+	background: url("../images/shadow.gif") no-repeat bottom right;
+}
+
+.flickr .shadow .container
+{
+	  display: block;
+		position: relative;
+		margin: -6px 6px 6px -6px;
+		padding: 0.5em 0.5em 1.5em;
+		background-color: #fff;
+	  border-color: #a9a9a9;
+	  border: 1px solid #a9a9a9;
+}

@@ -1,0 +1,12 @@
+agree:
+  id: 1
+  comment: <p>This is great.</p>
+  blog_id: 1
+  user_id: 1
+  
+disagree:
+  id: 2
+  comment: <p>This is crap.</p>
+  blog_id: 1
+  user_id: 2
+  

@@ -1,0 +1,53 @@
+<p>Already have an account? <%= link_to "Log in", "/login" %> instead.</p>
+<p class="hint">(* marks required fields)</p>
+<%= error_messages_for :user %>
+<div class="form">
+<% form_for :user, :url => users_path do |f| -%>
+<ul>
+
+	<li class="required">
+		<label for="login">Login</label>
+	</li>
+	<li>
+		<%= f.text_field :login %>
+	</li>
+
+	<li class="required">
+		<label for="first_name">First Name</label>
+	</li>
+	<li>
+		<%= f.text_field :first_name %>
+	</li>
+
+	<li>
+		<label for="last_name">Last Name</label>
+	</li>
+	<li>
+		<%= f.text_field :last_name %>
+	</li>
+
+	<li class="required">
+		<label for="email">Email</label>
+	</li>
+	<li>
+		<%= f.text_field :email %>
+	</li>
+
+	<li class="required">
+		<label for="password">Password</label>
+	</li>
+	<li>
+		<%= f.password_field :password %>
+	</li>
+
+	<li class="required">
+		<label for="password_confirmation">Confirm Password</label>
+	</li>
+	<li>
+		<%= f.password_field :password_confirmation %>
+	</li>
+
+	<li><%= submit_tag 'Sign up' %></li>
+</ul>
+<% end -%>
+</div>

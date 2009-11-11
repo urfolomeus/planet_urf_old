@@ -1,0 +1,104 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
+	"http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+
+<head>
+	<meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
+	<title>Planet Urf</title>
+	<link rel="shortcut icon" href="/favicon.ico" />
+	<%= stylesheet_link_tag 'theme_001.css' %>
+	<%= include_tiny_mce_if_needed %>
+	<script type="text/javascript">
+
+	function notReady() {
+		alert("This content is not ready yet. Check the blog for updates.");
+	}
+
+	</script>
+</head>
+
+<body>
+
+	<div id="header">
+		<h1>Planet Urf</h1>
+		<p>"Blogging a dead horse"</p>
+		<div class="right">
+			<% if logged_in? %>
+			<p>Hi, <%=h current_user.first_name %> (<a href="/logout" title="logout">logout</a>)</p>
+			<% else %>
+			<p>
+				<a href="/login" title="login">login</a>
+			</p>
+			<% end %>
+		</div>
+	</div>
+
+	<div id="navbar">
+
+		<div class="left">
+			<ul>
+				<li>
+					<a href="/blogs" title="blog" <% if controller_name != "projects" %>class="selected"<% end %> >blog</a>
+				</li>
+				<li>
+					<a href="/projects" title="projects" <% if controller_name == "projects" %>class="selected"<% end %> >projects</a>
+				</li>
+			</ul>
+		</div>
+
+	</div>
+
+	<div id="main">
+
+		<div id="sidebar">
+			<div class="bio">
+				<h2>Who am I?</h2>
+				<div class="shadow">
+					<div class="container">
+						<%= image_tag(	'Photo 40.jpg',
+																	:title => 'Moody shot of me!', 
+																	:border => 0,
+																	:class => "my_photo") %>
+					</div>
+				</div>
+				<div class="blurb">
+					<br />
+					<p>
+						I'm a software developer from	<a 	href="http://maps.google.co.uk/maps?f=q&source=s_q&hl=en&geocode=&q=aberdeen,+UK&sll=53.800651,-4.064941&sspn=20.141229,57.128906&ie=UTF8&z=11&iwloc=addr" 
+								title="map" target="_blank">Aberdeen, UK</a>.
+					</p>
+					<p>
+						I mainly develop in Java and Ruby on Rails at home and on Delphi and .Net (ASP2.0 and C#) at work, but 
+						I've also been known to dabble in PHP, Perl, Visual Basic and Javascript. As you can see I also have the basics 
+						of HTML and CSS (although no clue on style and taste)!
+					</p>
+					<p>
+						This site is mainly dedicated to my blog but I'll be adding various projects I'm working on as I get round to it. 
+						All current project files etc. can be accessed on the Projects tab.
+					</p>
+				</div>
+			</div>
+			<% if RAILS_ENV != "development" -%> <!-- ignore Twitter and Flickr in dev to prevent lag -->
+				<%= render_twitter_sidebar_widget %>
+				<%= render_flickr_sidebar_widget %>
+			<% end -%>
+		</div>
+
+		<div id="shadow">
+
+			<div id="content">
+
+				<p style="color: green"><%= flash[:notice] %></p>
+
+				<%= yield %>
+
+			</div>
+
+		</div>
+
+	</div>
+
+</body>
+
+</html>

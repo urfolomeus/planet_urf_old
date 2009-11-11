@@ -1,0 +1,24 @@
+<div class="twitter">
+	<div class="header">
+		<%= link_to image_tag(	'twitter_logo_header.png',
+														:title => 'Follow me on Twitter', 
+														:border => 0),
+								'http://twitter.com/mr_urf',
+								:class => 'twitter_button'
+		%>
+	</div>
+	<ul>
+    <% tweets.each do |tweet| -%>
+      <li>
+        <div class="shadow">
+					<div class="container">
+						<div class="tweet">
+							<p class="timestamp"><%= friendly_date_time(tweet.created_at) %></p>
+							<p><%= tweet.text %></p>
+						</div>
+					</div>
+				</div>
+      </li>
+    <% end -%>
+  </ul>
+</div>

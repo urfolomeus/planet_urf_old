@@ -1,0 +1,14 @@
+<tr>
+	<td class="title">
+		<%= link_to document.title, :controller => "documents", :action => "send_file", :filename => document.filename %>
+	</td>
+	<td><%=h document.project_id %></td>
+	<td><%=h document.category %></td>
+	<td><%=h document.status %></td>
+	<td><%=h document.revision %></td>
+	<% if is_admin? %>
+	<td><%= link_to 'Show', document %></td>
+	<td><%= link_to 'Edit', edit_document_path(document) %></td>
+	<td><%= link_to 'Destroy', document, :confirm => 'Are you sure?', :method => :delete %></td>
+	<% end %>
+</tr>

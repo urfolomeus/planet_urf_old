@@ -1,0 +1,13 @@
+<%= render :partial => @blog %>
+<div class="comments">
+	<a name="comment"></a>
+	<h2>Comments</h2>
+	<%= render :partial => @blog.comments %>
+	<% if logged_in? %>
+		<%= render :partial => 'comments/form' %>
+	<% else %>
+		<div class="hint">
+			<a href="/login" title="log in to Planet Urf">Log in</a> to add a comment of your own
+		</div>
+	<% end %>
+</div>

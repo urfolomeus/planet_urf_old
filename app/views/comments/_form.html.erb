@@ -1,0 +1,11 @@
+<div class="form">
+<% form_for :comment, :url => comments_path(:blog_id => @blog) do |f| %>
+<p>
+	<label for="comment_comment">Comment:</label><br />
+	<%= f.text_area :comment, :rows => 8 %>
+</p>
+<p>
+	<%= submit_tag "Submit Comment" %>
+</p>
+<% end %>
+</div>

@@ -1,0 +1,10 @@
+<div class="comment">
+	<div class="header">
+		At <%= comment.created_at.strftime('%H:%M') %> 
+		on <%= comment.created_at.strftime('%d %B') %>, 
+		<%= User.find(comment.user_id).first_name %> said:
+	</div>
+	<div class="body">
+		<%=h comment.comment %>
+	</div>
+</div>

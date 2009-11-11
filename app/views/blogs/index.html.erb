@@ -1,0 +1,6 @@
+<% if is_admin? %>
+<div class="link">
+	<%= link_to 'New blog', new_blog_path %>
+</div>
+<% end %>
+<%= render :partial => @blogs %>

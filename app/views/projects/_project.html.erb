@@ -1,0 +1,38 @@
+<div class="mini_proj">
+	<% if controller.action_name != "show" %>
+		<h2 class="header"><%= link_to project.title, project_path(project.id) %></h2>
+	<% else %>
+		<h2 class="header">
+			<%= project.title %>
+			<%if is_admin?%>
+				(<%= link_to "Edit", edit_project_path(project) %> | 
+				<%= link_to 'Destroy', project, :confirm => 'Are you sure?', :method => :delete %>)
+			<% end %>
+		</h2>	
+	<% end %>
+	<div class="blurb">
+		<%= project.blurb %>
+	</div>
+	<% if controller.action_name != "index" %>
+	<div class="attachments">
+		<h3>Visit project site</h3>
+		<p>
+			<% if project.url.nil? or project.url == '' %>
+				This project has no URL set.
+			<% else %>
+				<%= link_to "#{project.url}", project.url %>
+			<% end %>
+		</p>
+		<h3>View project source</h3>
+		<p>
+			<% if project.source_url.nil? or project.source_url == '' %>
+				You cannot view this project's source.
+			<% else %>
+				<%= link_to "#{project.source_url}", project.source_url %>
+			<% end %>
+		</p>
+		<h3>Related Blogs</h3>
+		<%= render :partial => @project.blogs.reverse %>
+	</div>
+	<% end %>
+</div>

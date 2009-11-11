@@ -1,0 +1,28 @@
+<div class="flickr">
+	<div class="header">	
+		<%= link_to image_tag(	'flickr_widget/flickr.jpg',
+														:title => 'View my Flickr photostream', 
+														:border => 0),
+								"http://www.flickr.com/photos/25978834@N08/",
+								:class => 'logo'
+		%>
+	</div>
+	<ul>
+    <% photos.each do |row| -%>
+      <li>
+        <% row.each do |p| %>
+          <span class="shadow">
+						<span class="container">
+							<%= link_to	image_tag(	p.url(:square), 
+																			:class => 'flickr_photo', 
+																			:title => p.title, 
+																			:border => 0, 
+																			:size => '75x75'), 
+													p.url_photopage %>
+						</span>
+					</span>
+        <% end %>
+      </li>
+    <% end -%>
+  </ul>
+</div>

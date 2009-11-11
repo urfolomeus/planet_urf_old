@@ -1,0 +1,6 @@
+<% if is_admin? %>
+<div class="link">
+	<%= link_to 'New project', new_project_path %>
+</div>
+<% end %>
+<%= render :partial => @projects %>
