@@ -1,6 +1,3 @@
 h1. Planet Urf
 
-This is the code for my personal blog. I've put this up on Github mainly to improve 
-my deployment process but there may be parts that you'd like to see the workings of.
-
-The site itself can be viewed at "http://www.planeturf.net":http://www.planeturf.net
+This was the code for my personal blog. I've since moved to "http://planeturf.tumblr.com":http://planeturf.tumblr.com because I was spending more time maintaining and adding to the blog code than I was writing on the blog itself. I've left the code here for the time being as a reminder to myself of how bad my code was when I was writing this! :)
